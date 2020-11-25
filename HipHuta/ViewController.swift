@@ -13,20 +13,35 @@ class ViewController: UIViewController {
     var mapView: MKMapView!
     
     var logoImageView : UIImageView = {
-        var imageView = UIImageView(image: #imageLiteral(resourceName: "HipHutaLogo"))
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "HipHutaLogo"))
         imageView.adjustsImageSizeForAccessibilityContentSizeCategory = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
+    var descripctionTextView: UITextView = {
+        let textView = UITextView()
+        textView.text = "Hip Huta"
+        textView.font = UIFont.boldSystemFont(ofSize: 40)
+        textView.textAlignment =  .center
+        textView.textColor = .black
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return textView
+    }()
     
     
+    
+//    "Hip Huta"
+//    "Jedz, baw się i zakochaj w Nowej Hucie"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(logoImageView)
         logoImageView.frame = view.frame
+        
+     
         
     }
 
