@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     var logoImageView : UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "HipHutaLogo"))
-        imageView.adjustsImageSizeForAccessibilityContentSizeCategory = false
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -38,8 +38,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(logoImageView)
-        logoImageView.frame = view.frame
+//        view.addSubview(logoImageView)
+//        logoImageView.frame = view.frame
         setUpTopStackView()
         
 //        view.addSubview(descripctionTextView)
@@ -57,13 +57,18 @@ class ViewController: UIViewController {
         topImageConteinerView.backgroundColor = .blue
         view.addSubview(topImageConteinerView)
         
-//        topImageConteinerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         
         topImageConteinerView.translatesAutoresizingMaskIntoConstraints = false
         topImageConteinerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         topImageConteinerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         topImageConteinerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         topImageConteinerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+    
+        topImageConteinerView.addSubview(logoImageView)
+    
+        logoImageView.centerXAnchor.constraint(equalTo: topImageConteinerView.centerXAnchor).isActive = true
+        logoImageView.centerYAnchor.constraint(equalTo: topImageConteinerView.centerYAnchor).isActive = true
+        logoImageView.heightAnchor.constraint(equalTo: topImageConteinerView.heightAnchor, multiplier: 0.85).isActive = true
     }
 
 }
