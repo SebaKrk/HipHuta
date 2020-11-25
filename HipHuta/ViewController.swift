@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textAlignment =  .center
         textView.textColor = .black
+        textView.isEditable = false
         
         return textView
     }()
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
         return button
     }()
     @objc func handleFirstButton() {
-        print("buttpn 1 pressed")
+        print("button 1 pressed")
     }
 
     let secondButton: UIButton = {
