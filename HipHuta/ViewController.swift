@@ -10,6 +10,8 @@ import MapKit
 
 class ViewController: UIViewController {
     
+    var firstImage: UIImage = #imageLiteral(resourceName: "home_selected")
+    
     var mapView: MKMapView!
     
     var logoImageView : UIImageView = {
@@ -36,10 +38,11 @@ class ViewController: UIViewController {
     
     let firstButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("AAA", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .red
+        button.setImage(UIImage(named: "home_selected")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        button.setTitle("AAA", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.setTitleColor(.black, for: .normal)
+//        button.backgroundColor = .red
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleFirstButton), for: .touchUpInside)
         return button
@@ -50,10 +53,11 @@ class ViewController: UIViewController {
 
     let secondButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("BBB", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .green
+        button.setImage(UIImage(named: "like_selected")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        button.setTitle("BBB", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.setTitleColor(.black, for: .normal)
+//        button.backgroundColor = .green
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleSecondButton), for: .touchUpInside)
 
@@ -64,10 +68,11 @@ class ViewController: UIViewController {
     }
     let thirdButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("CCC", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .yellow
+        button.setImage(UIImage(named: "gear")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        button.setTitle("CCC", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.setTitleColor(.black, for: .normal)
+//        button.backgroundColor = .yellow
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleThirdButton), for: .touchUpInside)
         return button
@@ -78,10 +83,11 @@ class ViewController: UIViewController {
     
     let fourthButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("DDD", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .blue
+        button.setImage(UIImage(named: "search_selected")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        button.setTitle("DDD", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.setTitleColor(.black, for: .normal)
+//        button.backgroundColor = .blue
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleFourthButton), for: .touchUpInside)
         
