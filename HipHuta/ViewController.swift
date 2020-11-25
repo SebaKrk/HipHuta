@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var descripctionTextView: UITextView = {
         let textView = UITextView()
         textView.text = "Hip Huta"
-        textView.font = UIFont.boldSystemFont(ofSize: 40)
+        textView.font = UIFont.boldSystemFont(ofSize: 70)
         textView.textAlignment =  .center
         textView.textColor = .black
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,17 +38,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.addSubview(logoImageView)
-//        logoImageView.frame = view.frame
         setUpTopStackView()
-        
-//        view.addSubview(descripctionTextView)
-//
-//        descripctionTextView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10).isActive = true
-//        descripctionTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-//        descripctionTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-//        descripctionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        
     }
     
     func setUpTopStackView() {
@@ -69,6 +59,13 @@ class ViewController: UIViewController {
         logoImageView.centerXAnchor.constraint(equalTo: topImageConteinerView.centerXAnchor).isActive = true
         logoImageView.centerYAnchor.constraint(equalTo: topImageConteinerView.centerYAnchor).isActive = true
         logoImageView.heightAnchor.constraint(equalTo: topImageConteinerView.heightAnchor, multiplier: 0.85).isActive = true
+        
+        view.addSubview(descripctionTextView)
+
+        descripctionTextView.topAnchor.constraint(equalTo: topImageConteinerView.bottomAnchor).isActive = true
+        descripctionTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        descripctionTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        descripctionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
 
 }
