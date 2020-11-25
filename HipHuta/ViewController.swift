@@ -57,8 +57,13 @@ class ViewController: UIViewController {
         topImageConteinerView.backgroundColor = .blue
         view.addSubview(topImageConteinerView)
         
-        topImageConteinerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+//        topImageConteinerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         
+        topImageConteinerView.translatesAutoresizingMaskIntoConstraints = false
+        topImageConteinerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        topImageConteinerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        topImageConteinerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        topImageConteinerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
     }
 
 }
