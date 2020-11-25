@@ -40,18 +40,26 @@ class ViewController: UIViewController {
         
         view.addSubview(logoImageView)
         logoImageView.frame = view.frame
-   
+        setUpTopStackView()
         
-        view.addSubview(descripctionTextView)
-
-        descripctionTextView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10).isActive = true
-        descripctionTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        descripctionTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        descripctionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+//        view.addSubview(descripctionTextView)
+//
+//        descripctionTextView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10).isActive = true
+//        descripctionTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//        descripctionTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//        descripctionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
     }
     
-
+    func setUpTopStackView() {
+        
+        let topImageConteinerView = UIView()
+        topImageConteinerView.backgroundColor = .blue
+        view.addSubview(topImageConteinerView)
+        
+        topImageConteinerView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        
+    }
 
 }
 
