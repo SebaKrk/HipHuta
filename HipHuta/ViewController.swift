@@ -35,28 +35,60 @@ class ViewController: UIViewController {
     
     let firstButton: UIButton = {
         let button = UIButton(type: .system)
+        button.setTitle("AAA", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .red
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleFirstButton), for: .touchUpInside)
         return button
     }()
+    @objc func handleFirstButton() {
+        print("buttpn 1 pressed")
+    }
+
     let secondButton: UIButton = {
         let button = UIButton(type: .system)
+        button.setTitle("BBB", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .green
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleSecondButton), for: .touchUpInside)
+
         return button
     }()
+    @objc func handleSecondButton() {
+        print("button 2 pressed")
+    }
     let thirdButton: UIButton = {
         let button = UIButton(type: .system)
+        button.setTitle("CCC", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .yellow
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleThirdButton), for: .touchUpInside)
         return button
     }()
+    @objc func handleThirdButton() {
+        print("button 3 pressed")
+    }
+    
     let fourthButton: UIButton = {
         let button = UIButton(type: .system)
+        button.setTitle("DDD", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .blue
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(handleFourthButton), for: .touchUpInside)
+        
         return button
     }()
+    @objc func handleFourthButton() {
+        print("button 4 pressed")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
