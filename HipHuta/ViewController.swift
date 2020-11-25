@@ -40,10 +40,17 @@ class ViewController: UIViewController {
         
         view.addSubview(logoImageView)
         logoImageView.frame = view.frame
+   
         
-     
+        view.addSubview(descripctionTextView)
+
+        descripctionTextView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10).isActive = true
+        descripctionTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        descripctionTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        descripctionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
     }
+    
 
 
 }
