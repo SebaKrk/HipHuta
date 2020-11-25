@@ -33,12 +33,36 @@ class ViewController: UIViewController {
         return textView
     }()
     
-    
+    let firstButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .red
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    let secondButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .green
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    let thirdButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .yellow
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    let fourthButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .blue
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpTopStackView()
-  
+        setUpBottonControlls()
     
     }
     
@@ -69,6 +93,21 @@ class ViewController: UIViewController {
         
     }
     
+    func setUpBottonControlls() {
+        let bottomControlsStackView = UIStackView(arrangedSubviews: [firstButton,secondButton,thirdButton,fourthButton])
+        view.addSubview(bottomControlsStackView)
+        bottomControlsStackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomControlsStackView.distribution = .fillEqually
+        bottomControlsStackView.axis = .horizontal
+        
+        NSLayoutConstraint.activate([
+            bottomControlsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            bottomControlsStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            bottomControlsStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            bottomControlsStackView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+    }
 }
 
 
