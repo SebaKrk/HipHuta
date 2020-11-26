@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     }
     let thirdButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "gear")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.setImage(UIImage(named: "search_selected")?.withRenderingMode(.alwaysOriginal), for: .normal)
 //        button.setTitle("CCC", for: .normal)
 //        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
 //        button.setTitleColor(.black, for: .normal)
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
     
     let fourthButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "search_selected")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.setImage(UIImage(named: "gear")?.withRenderingMode(.alwaysOriginal), for: .normal)
 //        button.setTitle("DDD", for: .normal)
 //        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
 //        button.setTitleColor(.black, for: .normal)
@@ -95,6 +95,10 @@ class ViewController: UIViewController {
     }()
     @objc func handleFourthButton() {
         print("button 4 pressed")
+        
+        let rootVC = AboutAsViewController()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        present(navVC, animated: true)
     }
 
     override func viewDidLoad() {
