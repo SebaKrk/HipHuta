@@ -27,6 +27,7 @@ class ViewController: UIViewController {
 
         attributedText.append(NSAttributedString(string: "\nJedz, baw się i zakochaj w Nowej Hucie", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30),NSAttributedString.Key.foregroundColor:UIColor.gray]))
 
+        
         textView.attributedText = attributedText
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textAlignment =  .center
