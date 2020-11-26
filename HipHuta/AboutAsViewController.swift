@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AboutAsViewController: UIViewController {
     
@@ -14,7 +15,7 @@ class AboutAsViewController: UIViewController {
         let attributedText = NSMutableAttributedString(string: "Hip Huta", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 70)])
         
         attributedText.append(NSAttributedString(string: "\nJedz, baw się i zakochaj w Nowej Hucie", attributes:
-            [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 30)]))
+                                                    [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 30)]))
         
         attributedText.append(NSAttributedString(string: "\n\n\nBlog poświęcony kawiarniom, restauracjom i fajnym inicjatywom w najmłodszej dzielnicy Krakowa. \nDołącz do nas i pokaż, że NH jest „hip”!\n\nUważasz, że powinniśmy odwiedzić twój lokal? Znalazłeś ciekawe miejsce w Hucie o którym powinniśmy napisać? Chciałbyś z nami współpracować?\n\nKoniecznie daj nam o tym znać na hiphuta@gmail.com lub Facebooku. \nOdwiedź też naszego Instagrama", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20),NSAttributedString.Key.foregroundColor:UIColor.gray]))
         
@@ -34,6 +35,41 @@ class AboutAsViewController: UIViewController {
         return imageView
     }()
     
+    let facebookButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .blue
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let instagramButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .yellow
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let mailButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .green
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    let wwwButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .red
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    //    let url = newsApple[indexPath.row].url
+    //    let vc = SFSafariViewController(url: URL(string: url!)!)
+    //    present(vc, animated: true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +78,7 @@ class AboutAsViewController: UIViewController {
         
         setUpDescView()
         setUpImageView()
-
+        
     }
     
     func setUpDescView() {
@@ -58,7 +94,7 @@ class AboutAsViewController: UIViewController {
         let botomImageContainerView = UIView()
         view.addSubview(botomImageContainerView)
         
-        botomImageContainerView.backgroundColor = .red
+        //        botomImageContainerView.backgroundColor = .red
         botomImageContainerView.translatesAutoresizingMaskIntoConstraints = false
         botomImageContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         botomImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
