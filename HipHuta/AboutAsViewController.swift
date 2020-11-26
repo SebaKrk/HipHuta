@@ -55,10 +55,21 @@ class AboutAsViewController: UIViewController {
     }
     
     func setUpImageView() {
-        view.addSubview(imageView)
+        let botomImageContainerView = UIView()
+        view.addSubview(botomImageContainerView)
+        
+        botomImageContainerView.backgroundColor = .red
+        botomImageContainerView.translatesAutoresizingMaskIntoConstraints = false
+        botomImageContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        botomImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        botomImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        botomImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3).isActive = true
+
+        
+//        view.addSubview(imageView)
 //        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
 //        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        imageView.frame = CGRect(x: 110, y: 600, width: 200 , height: 200)
+//        imageView.frame = CGRect(x: 110, y: 600, width: 200 , height: 200)
     }
 }
 
