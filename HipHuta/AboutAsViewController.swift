@@ -27,6 +27,13 @@ class AboutAsViewController: UIViewController {
         return textView
     }()
     
+    let imageView:UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "HipHuta-oNas"))
+        imageView.adjustsImageSizeForAccessibilityContentSizeCategory = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +41,8 @@ class AboutAsViewController: UIViewController {
         title = "O Nas"
         
         setUpDescView()
+        setUpImageView()
+
     }
     
     func setUpDescView() {
@@ -43,7 +52,13 @@ class AboutAsViewController: UIViewController {
         descripctionTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         descripctionTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         descripctionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        
+    }
+    
+    func setUpImageView() {
+        view.addSubview(imageView)
+//        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+//        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.frame = CGRect(x: 110, y: 600, width: 200 , height: 200)
     }
 }
 
