@@ -64,12 +64,11 @@ class AboutAsViewController: UIViewController {
         botomImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         botomImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         botomImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3).isActive = true
-
-        
-//        view.addSubview(imageView)
-//        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-//        imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-//        imageView.frame = CGRect(x: 110, y: 600, width: 200 , height: 200)
+        botomImageContainerView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.centerXAnchor.constraint(equalTo: botomImageContainerView.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: botomImageContainerView.centerYAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: botomImageContainerView.heightAnchor, multiplier: 0.95).isActive = true
     }
 }
 
