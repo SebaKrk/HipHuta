@@ -12,12 +12,16 @@ class AboutAsViewController: UIViewController {
     
     var descripctionTextView : UITextView = {
         let textView = UITextView()
-        let attributedText = NSMutableAttributedString(string: "Hip Huta", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 70)])
+        let attributedText = NSMutableAttributedString(string: "Hip Huta", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 60)])
         
         attributedText.append(NSAttributedString(string: "\nJedz, baw się i zakochaj w Nowej Hucie", attributes:
                                                     [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 30)]))
         
-        attributedText.append(NSAttributedString(string: "\n\n\nBlog poświęcony kawiarniom, restauracjom i fajnym inicjatywom w najmłodszej dzielnicy Krakowa. \nDołącz do nas i pokaż, że NH jest „hip”!\n\nUważasz, że powinniśmy odwiedzić twój lokal? Znalazłeś ciekawe miejsce w Hucie o którym powinniśmy napisać? Chciałbyś z nami współpracować?\n\nKoniecznie daj nam o tym znać na hiphuta@gmail.com lub Facebooku. \nOdwiedź też naszego Instagrama", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20),NSAttributedString.Key.foregroundColor:UIColor.gray]))
+        attributedText.append(NSAttributedString(string: "\n\nBlog poświęcony kawiarniom, restauracjom i fajnym inicjatywom w najmłodszej dzielnicy Krakowa", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 16),NSAttributedString.Key.foregroundColor:UIColor.gray]))
+        
+        attributedText.append(NSAttributedString(string: "\n\nDołącz do nas i pokaż, że NH jest „hip”!", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)]))
+                                
+        attributedText.append(NSAttributedString(string: "\n\nUważasz, że powinniśmy odwiedzić twój lokal? Znalazłeś ciekawe miejsce w Hucie o którym powinniśmy napisać? Chciałbyś z nami współpracować? Koniecznie daj nam o tym znać na hiphuta@gmail.com lub Facebooku. \nOdwiedź też naszego Instagrama", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 16),NSAttributedString.Key.foregroundColor:UIColor.gray]))
         
         textView.attributedText = attributedText
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -91,20 +95,36 @@ class AboutAsViewController: UIViewController {
     }
     
     func setUpImageView() {
-        let botomImageContainerView = UIView()
-        view.addSubview(botomImageContainerView)
         
-        //        botomImageContainerView.backgroundColor = .red
-        botomImageContainerView.translatesAutoresizingMaskIntoConstraints = false
-        botomImageContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        botomImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        botomImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        botomImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3).isActive = true
-        botomImageContainerView.addSubview(imageView)
+        let bottomImageContainerView = UIView()
+        view.addSubview(bottomImageContainerView)
+        
+//        bottomImageContainerView.backgroundColor = .red
+        bottomImageContainerView.translatesAutoresizingMaskIntoConstraints = false
+        bottomImageContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        bottomImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bottomImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bottomImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.45).isActive = true
+        bottomImageContainerView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.centerXAnchor.constraint(equalTo: botomImageContainerView.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: botomImageContainerView.centerYAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalTo: botomImageContainerView.heightAnchor, multiplier: 0.95).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: bottomImageContainerView.centerXAnchor).isActive = true
+//        imageView.centerYAnchor.constraint(equalTo: bottomImageContainerView.centerYAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: bottomImageContainerView.heightAnchor, multiplier: 0.76).isActive = true
+        
+        let bottomControls = UIStackView(arrangedSubviews: [facebookButton,instagramButton,mailButton,wwwButton])
+        bottomImageContainerView.addSubview(bottomControls)
+        bottomControls.translatesAutoresizingMaskIntoConstraints = false
+        bottomControls.distribution = .fillEqually
+        bottomControls.axis = .horizontal
+        
+        NSLayoutConstraint.activate([
+            bottomControls.bottomAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.bottomAnchor),
+            bottomControls.leadingAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.leadingAnchor),
+            bottomControls.trailingAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.trailingAnchor),
+            bottomControls.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        
     }
 }
 
