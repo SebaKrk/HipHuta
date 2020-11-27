@@ -15,6 +15,18 @@ class MapNhViewController : UIViewController {
         return mapView
     }()
     
+    let centerMapButton : UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "location-arrow-flat")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleCenterOnUserLocation), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    @objc func handleCenterOnUserLocation() {
+        
+    }
+    
     let logoTextView: UITextView = {
         let textView = UITextView()
         let attributedText = NSMutableAttributedString(string: "Hip Huta", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 60)])
@@ -119,5 +131,3 @@ class MapNhViewController : UIViewController {
     
 }
 
-// WASI ZNAJOMI TWIERDZĄ, ŻE W HUCIE NIE MA GDZIE ZJEŚĆ?
-// POKAŻCIE IM TĘ MAPĘ
