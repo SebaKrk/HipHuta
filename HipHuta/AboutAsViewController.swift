@@ -93,10 +93,12 @@ class AboutAsViewController: UIViewController {
     
     let wwwButton: UIButton = {
         let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "www")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.backgroundColor = .red
-        button.setTitle("www", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.white, for: .normal)
+        
+//        button.setTitle("www", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.setTitleColor(.white, for: .normal)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleWwwButton), for: .touchUpInside)

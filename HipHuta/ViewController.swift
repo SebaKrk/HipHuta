@@ -10,7 +10,7 @@ import MapKit
 
 class ViewController: UIViewController {
     
-    var firstImage: UIImage = #imageLiteral(resourceName: "home_selected")
+    
     
     var mapView: MKMapView!
     
@@ -80,6 +80,11 @@ class ViewController: UIViewController {
     }()
     @objc func handleThirdButton() {
         print("button 3 pressed")
+        
+        let rootVC = MapNhViewController()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: true)
     }
     
     let fourthButton: UIButton = {
