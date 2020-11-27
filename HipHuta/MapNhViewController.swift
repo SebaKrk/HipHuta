@@ -16,10 +16,12 @@ class MapNhViewController : UIViewController {
         
         title = "Kulinarna Mapa NH"
         view.backgroundColor = .white
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back" , style: .plain, target: self, action: #selector(dismisSelf))
         
     }
-   
+    @objc private func dismisSelf() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 
