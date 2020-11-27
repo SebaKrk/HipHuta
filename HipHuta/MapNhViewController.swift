@@ -28,83 +28,42 @@ class MapNhViewController : UIViewController {
         dismiss(animated: true, completion: nil)
     }
     func setUpContainerView() {
-        let topCointeinerView = UIView()
-        view.addSubview(topCointeinerView)
-        topCointeinerView.backgroundColor = .red
-        topCointeinerView.translatesAutoresizingMaskIntoConstraints = false
-        topCointeinerView.frame = view.frame
+        let topContainerView = UIView()
         
-        let upperContainer = UIView()
-        upperContainer.backgroundColor = .yellow
-        upperContainer.translatesAutoresizingMaskIntoConstraints = false
-        upperContainer.frame = CGRect(x: 2, y: 100, width: 410, height: 375)
+        view.addSubview(topContainerView)
+        topContainerView.backgroundColor = .blue
         
-        let bottomContainer = UIView()
-        bottomContainer.translatesAutoresizingMaskIntoConstraints = false
-        bottomContainer.backgroundColor = .blue
-        bottomContainer.frame = CGRect(x: 2, y: 478, width: 410, height: 375)
+        topContainerView.translatesAutoresizingMaskIntoConstraints = false
+        topContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        topContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        topContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        topContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+    
+        let centerContainerView = UIView()
+        topContainerView.addSubview(centerContainerView)
+        centerContainerView.backgroundColor = .yellow
         
-        let firstUpperContainer = UIView()
-        firstUpperContainer.translatesAutoresizingMaskIntoConstraints = false
-        firstUpperContainer.backgroundColor = .green
-        firstUpperContainer.frame = CGRect(x: 5, y: 5, width: 400, height: 150)
-        
-        let secondUpperContainer = UIView()
-        secondUpperContainer.translatesAutoresizingMaskIntoConstraints = false
-        secondUpperContainer.backgroundColor = .darkGray
-        secondUpperContainer.frame = CGRect(x: 5, y: 160, width: 400, height: 210)
-        
-        topCointeinerView.addSubview(upperContainer)
-        topCointeinerView.addSubview(bottomContainer)
-        upperContainer.addSubview(firstUpperContainer)
-        upperContainer.addSubview(secondUpperContainer)
-        
-//        upperContainer.centerXAnchor.constraint(equalTo: topCointeinerView.centerXAnchor).isActive = true
-//        upperContainer.centerYAnchor.constraint(equalTo: topCointeinerView.centerYAnchor).isActive = true
-//        upperContainer.heightAnchor.constraint(equalTo: topCointeinerView.heightAnchor, multiplier: 0.5).isActive = true
-//        bottomContainer.centerXAnchor.constraint(equalTo: topCointeinerView.centerXAnchor).isActive = true
-//        bottomContainer.centerYAnchor.constraint(equalTo: topCointeinerView.centerYAnchor).isActive = true
-//        bottomContainer.heightAnchor.constraint(equalTo: topCointeinerView.heightAnchor, multiplier: 0.5).isActive = true
-
+        centerContainerView.translatesAutoresizingMaskIntoConstraints = false
+        centerContainerView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor).isActive = true
+        centerContainerView.leftAnchor.constraint(equalTo: topContainerView.leftAnchor).isActive = true
+        centerContainerView.rightAnchor.constraint(equalTo: topContainerView.rightAnchor).isActive = true
+        centerContainerView.heightAnchor.constraint(equalTo: topContainerView.heightAnchor, multiplier: 0.3).isActive = true
         
         
+        let botoomContainerView = UIView()
+        view.addSubview(botoomContainerView)
+        botoomContainerView.backgroundColor = .red
         
-        
-        
-        //            view.addSubview(mapView)
-        //            mapView.frame = view.frame
-        
-        
-        
-        
-        //        let upperContainer = UIView()
-        //        view.addSubview(upperContainer)
-        //
-        //        upperContainer.backgroundColor = .red
-        //        upperContainer.frame = CGRect(x: 0, y: 100, width: 100, height: 100)
-        //
-        //        let centerContainer = UIView()
-        //        view.addSubview(centerContainer)
-        //        centerContainer.backgroundColor = .green
-        //        centerContainer.frame = CGRect(x: 0, y: 300, width: 100, height: 100)
-        //
-        //        let bottomContainer = UIView()
-        //        view.addSubview(bottomContainer)
-        //        bottomContainer.backgroundColor = .blue
-        //        bottomContainer.frame = CGRect(x: 0, y: 500, width: 100, height: 100)
+        botoomContainerView.translatesAutoresizingMaskIntoConstraints = false
+        botoomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        botoomContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        botoomContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        botoomContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
         
     }
     
     
 }
-
-
-
-
-
-
-
-
 
 // WASI ZNAJOMI TWIERDZĄ, ŻE W HUCIE NIE MA GDZIE ZJEŚĆ?
 // POKAŻCIE IM TĘ MAPĘ
