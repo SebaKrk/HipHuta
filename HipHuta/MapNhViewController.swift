@@ -10,6 +10,8 @@ import MapKit
 
 class MapNhViewController : UIViewController {
     
+//    MARK: - Buttons, TextView, Maps
+    
     let mapView: MKMapView = {
         let mapView = MKMapView()
         return mapView
@@ -59,6 +61,7 @@ class MapNhViewController : UIViewController {
     }()
     
     
+// MARK: - VievDidLoad
     
     var location: CLLocationManager!
     
@@ -82,6 +85,9 @@ class MapNhViewController : UIViewController {
     @objc private func dismisSelf() {
         dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: - SetUp Views & Buttons
+    
     func setUpMapButton() {
         view.addSubview(centerMapButton)
         centerMapButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -44).isActive = true
@@ -147,7 +153,7 @@ class MapNhViewController : UIViewController {
         
         
     }
-// MARK - MAPS operation
+// MARK: - MAPS operation
     
     func centerMapOnUserLocation() {
         guard let coordinate = locationManager.location?.coordinate else {return}
