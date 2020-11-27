@@ -10,7 +10,14 @@ import MapKit
 
 class MapNhViewController : UIViewController {
     
+    let mapView: MKMapView = {
+        let mapView = MKMapView()
+        return mapView
+    }()
+
+
     
+    var location: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +27,7 @@ class MapNhViewController : UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back" , style: .plain, target: self, action: #selector(dismisSelf))
         
         setUpContainerView()
-        
-        
-        
+
     }
     @objc private func dismisSelf() {
         dismiss(animated: true, completion: nil)
@@ -59,6 +64,9 @@ class MapNhViewController : UIViewController {
         botoomContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         botoomContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         botoomContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+        
+        botoomContainerView.addSubview(mapView)
+        mapView.frame = view.frame
         
     }
     
