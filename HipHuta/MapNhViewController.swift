@@ -14,6 +14,7 @@ class MapNhViewController : UIViewController {
         let mapView = MKMapView()
         return mapView
     }()
+    var locationManager: CLLocationManager!
     
     let centerMapButton : UIButton = {
         let button = UIButton()
@@ -25,12 +26,13 @@ class MapNhViewController : UIViewController {
     }()
     @objc func handleCenterOnUserLocation() {
         print("center map button pressed")
+        centerMapOnUserLocation()
     }
     
     let logoTextView: UITextView = {
         let textView = UITextView()
         let attributedText = NSMutableAttributedString(string: "Hip Huta", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 60)])
-   
+        
         attributedText.append(NSAttributedString(string:"\nJedz, baw się i zakochaj w Nowej Hucie", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30),NSAttributedString.Key.foregroundColor:UIColor.gray]))
         
         textView.attributedText = attributedText
@@ -56,7 +58,7 @@ class MapNhViewController : UIViewController {
         return textView
     }()
     
-
+    
     
     var location: CLLocationManager!
     
@@ -70,7 +72,13 @@ class MapNhViewController : UIViewController {
         setUpContainerView()
         setUpMapButton()
         
+        configureMapView()
+        configureLocationManager()
+        enablelocationServices()
+        centerMapOnUserLocation()
+        
     }
+    
     @objc private func dismisSelf() {
         dismiss(animated: true, completion: nil)
     }
@@ -85,11 +93,11 @@ class MapNhViewController : UIViewController {
     }
     
     func setUpContainerView() {
-    
+        
         let topContainerView = UIView()
         
         view.addSubview(topContainerView)
-        topContainerView.backgroundColor = .blue
+        //        topContainerView.backgroundColor = .blue
         
         topContainerView.translatesAutoresizingMaskIntoConstraints = false
         topContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -105,7 +113,7 @@ class MapNhViewController : UIViewController {
         
         let centerContainerView = UIView()
         topContainerView.addSubview(centerContainerView)
-        centerContainerView.backgroundColor = .yellow
+        //        centerContainerView.backgroundColor = .yellow
         
         centerContainerView.translatesAutoresizingMaskIntoConstraints = false
         centerContainerView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor).isActive = true
@@ -121,7 +129,7 @@ class MapNhViewController : UIViewController {
         
         let botoomContainerView = UIView()
         view.addSubview(botoomContainerView)
-        botoomContainerView.backgroundColor = .red
+        //        botoomContainerView.backgroundColor = .red
         
         botoomContainerView.translatesAutoresizingMaskIntoConstraints = false
         botoomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -139,7 +147,48 @@ class MapNhViewController : UIViewController {
         
         
     }
+// MARK - MAPS operation
     
+    func centerMapOnUserLocation() {
+        guard let coordinate = locationManager.location?.coordinate else {return}
+        print("cord: \(coordinate)")
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+        
+        mapView.setRegion(region, animated: true)
+    }
     
+    func configureLocationManager() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+    }
+    
+    func configureMapView() {
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+    }
+}
+extension MapNhViewController: CLLocationManagerDelegate {
+    
+    func enablelocationServices() {
+        switch CLLocationManager.authorizationStatus() {
+        
+        case .notDetermined:
+            print("Lacation auth status is not Determined")
+            locationManager.requestWhenInUseAuthorization()
+            
+        case .restricted:
+            print("Lacation auth status is restricted")
+        case .denied:
+            print("Lacation auth status is denied ")
+        case .authorizedAlways:
+            print("Lacation auth status is authorizedAlways")
+        case .authorizedWhenInUse:
+            print("Lacation auth status is When In Use")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        centerMapOnUserLocation()
+    }
 }
 
