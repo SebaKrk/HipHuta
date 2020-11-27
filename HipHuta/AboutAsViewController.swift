@@ -75,10 +75,13 @@ class AboutAsViewController: UIViewController {
     
     let mailButton: UIButton = {
         let button = UIButton(type: .system)
+        
+        button.setImage(UIImage(systemName: "mail", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.white,renderingMode: .alwaysOriginal), for: .normal)
+        
         button.backgroundColor = .green
-        button.setTitle("Mail", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.setTitleColor(.white, for: .normal)
+//        button.setTitle("Mail", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.setTitleColor(.white, for: .normal)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleMailButton), for: .touchUpInside)
