@@ -24,7 +24,7 @@ class MapNhViewController : UIViewController {
         return button
     }()
     @objc func handleCenterOnUserLocation() {
-        
+        print("center map button pressed")
     }
     
     let logoTextView: UITextView = {
@@ -68,12 +68,24 @@ class MapNhViewController : UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "back" , style: .plain, target: self, action: #selector(dismisSelf))
         
         setUpContainerView()
+        setUpMapButton()
         
     }
     @objc private func dismisSelf() {
         dismiss(animated: true, completion: nil)
     }
+    func setUpMapButton() {
+        view.addSubview(centerMapButton)
+        centerMapButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -44).isActive = true
+        centerMapButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive = true
+        centerMapButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        centerMapButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        centerMapButton.layer.cornerRadius = 50 / 2
+        centerMapButton.alpha = 1
+    }
+    
     func setUpContainerView() {
+    
         let topContainerView = UIView()
         
         view.addSubview(topContainerView)
