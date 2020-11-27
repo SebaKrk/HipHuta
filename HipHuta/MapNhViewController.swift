@@ -19,7 +19,7 @@ class MapNhViewController : UIViewController {
         let textView = UITextView()
         let attributedText = NSMutableAttributedString(string: "Hip Huta", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 60)])
    
-        attributedText.append(NSAttributedString(string:"\nJedz, baw się i zakochaj w Nowej Hucie", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20),NSAttributedString.Key.foregroundColor:UIColor.gray]))
+        attributedText.append(NSAttributedString(string:"\nJedz, baw się i zakochaj w Nowej Hucie", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 30),NSAttributedString.Key.foregroundColor:UIColor.gray]))
         
         textView.attributedText = attributedText
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,6 +30,21 @@ class MapNhViewController : UIViewController {
         return textView
     }()
     
+    var descripctionTextView : UITextView = {
+        let textView = UITextView()
+        let attributedText = NSMutableAttributedString(string: "Wasi znajomi twierdzą, że w Nowej Hucie nie ma gdzie zjeść ? Pokażcie im tę mapę", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)])
+        
+        attributedText.append(NSAttributedString(string: "\n\nW wielu wiadomościach do nas pisaliście, że na Hip Hucie brakuje mapy, na której widoczne byłyby wszystkie odwiedzone przez nas lokale. Postanowiliśmy to zmienić. Efekt naszych prac możecie podziwiać poniżej:", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14),NSAttributedString.Key.foregroundColor:UIColor.gray]))
+        
+        textView.attributedText = attributedText
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.textAlignment =  .center
+        textView.isEditable = false
+        
+        return textView
+    }()
+    
+
     
     var location: CLLocationManager!
     
@@ -72,8 +87,13 @@ class MapNhViewController : UIViewController {
         centerContainerView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor).isActive = true
         centerContainerView.leftAnchor.constraint(equalTo: topContainerView.leftAnchor).isActive = true
         centerContainerView.rightAnchor.constraint(equalTo: topContainerView.rightAnchor).isActive = true
-        centerContainerView.heightAnchor.constraint(equalTo: topContainerView.heightAnchor, multiplier: 0.3).isActive = true
+        centerContainerView.heightAnchor.constraint(equalTo: topContainerView.heightAnchor, multiplier: 0.4).isActive = true
         
+        centerContainerView.addSubview(descripctionTextView)
+        descripctionTextView.topAnchor.constraint(equalTo: centerContainerView.topAnchor).isActive = true
+        descripctionTextView.leftAnchor.constraint(equalTo: centerContainerView.leftAnchor,constant: 10).isActive = true
+        descripctionTextView.rightAnchor.constraint(equalTo: centerContainerView.rightAnchor,constant: -10).isActive = true
+        descripctionTextView.bottomAnchor.constraint(equalTo: centerContainerView.bottomAnchor, constant: 0).isActive = true
         
         let botoomContainerView = UIView()
         view.addSubview(botoomContainerView)
