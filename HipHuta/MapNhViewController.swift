@@ -18,8 +18,8 @@ class MapNhViewController : UIViewController {
     let logoTextView: UITextView = {
         let textView = UITextView()
         let attributedText = NSMutableAttributedString(string: "Hip Huta", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 60)])
-        
-        attributedText.append(NSAttributedString(string: "\nJedz, baw się i zakochaj w Nowej Hucie", attributes: [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 30)]))
+   
+        attributedText.append(NSAttributedString(string:"\nJedz, baw się i zakochaj w Nowej Hucie", attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 20),NSAttributedString.Key.foregroundColor:UIColor.gray]))
         
         textView.attributedText = attributedText
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +58,11 @@ class MapNhViewController : UIViewController {
         topContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         topContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
         
+        topContainerView.addSubview(logoTextView)
+        logoTextView.topAnchor.constraint(equalTo: topContainerView.topAnchor).isActive = true
+        logoTextView.leftAnchor.constraint(equalTo: topContainerView.leftAnchor).isActive = true
+        logoTextView.rightAnchor.constraint(equalTo: topContainerView.rightAnchor).isActive = true
+        logoTextView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor, constant: 0).isActive = true
         
         let centerContainerView = UIView()
         topContainerView.addSubview(centerContainerView)
