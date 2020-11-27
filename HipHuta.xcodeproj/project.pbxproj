@@ -62,8 +62,8 @@
 			children = (
 				93015DA6256D5963005B4A3D /* AppDelegate.swift */,
 				93015DA8256D5963005B4A3D /* SceneDelegate.swift */,
-				936FB7FE256FB3D10099520D /* AboutAsViewController.swift */,
 				932316E42570E3F300AD221B /* MapNhViewController.swift */,
+				936FB7FE256FB3D10099520D /* AboutAsViewController.swift */,
 				93015DAA256D5963005B4A3D /* ViewController.swift */,
 				93015DAC256D5963005B4A3D /* Main.storyboard */,
 				93015DAF256D5966005B4A3D /* Assets.xcassets */,
