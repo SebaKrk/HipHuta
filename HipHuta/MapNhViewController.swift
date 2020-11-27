@@ -66,7 +66,13 @@ class MapNhViewController : UIViewController {
         botoomContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
         
         botoomContainerView.addSubview(mapView)
-        mapView.frame = view.frame
+
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.topAnchor.constraint(equalTo: botoomContainerView.topAnchor, constant: 10).isActive = true
+        mapView.leftAnchor.constraint(equalTo: botoomContainerView.leftAnchor, constant: 10).isActive = true
+        mapView.rightAnchor.constraint(equalTo: botoomContainerView.rightAnchor, constant: -10).isActive = true
+        mapView.heightAnchor.constraint(equalTo: botoomContainerView.heightAnchor, multiplier: 0.9).isActive = true
+        
         
     }
     
