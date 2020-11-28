@@ -38,9 +38,6 @@ class AboutAsViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    //    let url = newsApple[indexPath.row].url
-    //    let vc = SFSafariViewController(url: URL(string: url!)!)
-    //    present(vc, animated: true)
     
     let facebookButton: UIButton = {
         let button = UIButton(type: .system)
@@ -79,10 +76,6 @@ class AboutAsViewController: UIViewController {
         button.setImage(UIImage(systemName: "mail", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.white,renderingMode: .alwaysOriginal), for: .normal)
         
         button.backgroundColor = .green
-//        button.setTitle("Mail", for: .normal)
-//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-//        button.setTitleColor(.white, for: .normal)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleMailButton), for: .touchUpInside)
         return button
@@ -95,11 +88,6 @@ class AboutAsViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "www")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.backgroundColor = .red
-        
-//        button.setTitle("www", for: .normal)
-//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-//        button.setTitleColor(.white, for: .normal)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleWwwButton), for: .touchUpInside)
         return button
@@ -115,52 +103,109 @@ class AboutAsViewController: UIViewController {
         
         view.backgroundColor = .white
         title = "O Nas"
+//
+//        setUpDescView()
+//        setUpImageView()
         
-        setUpDescView()
-        setUpImageView()
+        setUpContainerView()
         
     }
     
-    func setUpDescView() {
-        view.addSubview(descripctionTextView)
+    func setUpContainerView() {
+        let topContainerView = UIView()
+        view.addSubview(topContainerView)
+        topContainerView.backgroundColor = .green
         
-        descripctionTextView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        descripctionTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
-        descripctionTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
-        descripctionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-    }
-    
-    func setUpImageView() {
+        topContainerView.translatesAutoresizingMaskIntoConstraints = false
+        topContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        topContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        topContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        topContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
         
-        let bottomImageContainerView = UIView()
-        view.addSubview(bottomImageContainerView)
+        let centerContainerView = UIView()
+        view.addSubview(centerContainerView)
+        centerContainerView.backgroundColor = .red
         
-        //        bottomImageContainerView.backgroundColor = .red
-        bottomImageContainerView.translatesAutoresizingMaskIntoConstraints = false
-        bottomImageContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        bottomImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        bottomImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        bottomImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.45).isActive = true
-        bottomImageContainerView.addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.centerXAnchor.constraint(equalTo: bottomImageContainerView.centerXAnchor).isActive = true
-        //        imageView.centerYAnchor.constraint(equalTo: bottomImageContainerView.centerYAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalTo: bottomImageContainerView.heightAnchor, multiplier: 0.76).isActive = true
+        centerContainerView.translatesAutoresizingMaskIntoConstraints = false
+        centerContainerView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor).isActive = true
+        centerContainerView.leadingAnchor.constraint(equalTo: topContainerView.leadingAnchor).isActive = true
+        centerContainerView.trailingAnchor.constraint(equalTo: topContainerView.trailingAnchor).isActive = true
+        centerContainerView.heightAnchor.constraint(equalTo: topContainerView.heightAnchor, multiplier: 0.5).isActive = true
+        
+        let bottomContainerView = UIView()
+        view.addSubview(bottomContainerView)
+        bottomContainerView.backgroundColor = .yellow
+        bottomContainerView.translatesAutoresizingMaskIntoConstraints = false
+
+        bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        bottomContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bottomContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bottomContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+        
+        
         
         let bottomControls = UIStackView(arrangedSubviews: [facebookButton,instagramButton,mailButton,wwwButton])
-        bottomImageContainerView.addSubview(bottomControls)
-        bottomControls.translatesAutoresizingMaskIntoConstraints = false
-        bottomControls.distribution = .fillEqually
-        bottomControls.axis = .horizontal
-        
-        NSLayoutConstraint.activate([
-            bottomControls.bottomAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.bottomAnchor),
-            bottomControls.leadingAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.leadingAnchor),
-            bottomControls.trailingAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.trailingAnchor),
-            bottomControls.heightAnchor.constraint(equalToConstant: 40)
-        ])
+        view.addSubview(bottomControls)
+         bottomControls.translatesAutoresizingMaskIntoConstraints = false
+         bottomControls.distribution = .fillEqually
+         bottomControls.axis = .horizontal
+     
+         NSLayoutConstraint.activate([
+             bottomControls.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+             bottomControls.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+             bottomControls.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+             bottomControls.heightAnchor.constraint(equalToConstant: 30)
+         ])
         
         
     }
+ 
+    
+    
+    
+    
+    
+    // cut
 }
+//func setUpDescView() {
+//    view.addSubview(descripctionTextView)
+//
+//    descripctionTextView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//    descripctionTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+//    descripctionTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+//    descripctionTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+//}
+//
+//func setUpImageView() {
+//
+//    let bottomImageContainerView = UIView()
+//    view.addSubview(bottomImageContainerView)
+//
+//    //        bottomImageContainerView.backgroundColor = .red
+//    bottomImageContainerView.translatesAutoresizingMaskIntoConstraints = false
+//    bottomImageContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//    bottomImageContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//    bottomImageContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//    bottomImageContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.45).isActive = true
+//    bottomImageContainerView.addSubview(imageView)
+//    imageView.translatesAutoresizingMaskIntoConstraints = false
+//    imageView.centerXAnchor.constraint(equalTo: bottomImageContainerView.centerXAnchor).isActive = true
+//    //        imageView.centerYAnchor.constraint(equalTo: bottomImageContainerView.centerYAnchor).isActive = true
+//    imageView.heightAnchor.constraint(equalTo: bottomImageContainerView.heightAnchor, multiplier: 0.76).isActive = true
+//
+//    let bottomControls = UIStackView(arrangedSubviews: [facebookButton,instagramButton,mailButton,wwwButton])
+//    bottomImageContainerView.addSubview(bottomControls)
+//    bottomControls.translatesAutoresizingMaskIntoConstraints = false
+//    bottomControls.distribution = .fillEqually
+//    bottomControls.axis = .horizontal
+//
+//    NSLayoutConstraint.activate([
+//        bottomControls.bottomAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.bottomAnchor),
+//        bottomControls.leadingAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.leadingAnchor),
+//        bottomControls.trailingAnchor.constraint(equalTo: bottomImageContainerView.safeAreaLayoutGuide.trailingAnchor),
+//        bottomControls.heightAnchor.constraint(equalToConstant: 40)
+//    ])
+//
+//
+//}
 
