@@ -10,6 +10,14 @@ import SafariServices
 
 class AboutAsViewController: UIViewController {
     
+    let logoImageView: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "HipHuta"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
+    
     let logoTextView: UITextView = {
         let textView = UITextView()
         let attributedText = NSMutableAttributedString(string: "Hip Huta", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 60)])
@@ -52,8 +60,12 @@ class AboutAsViewController: UIViewController {
     
     let facebookButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "facebook")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        button.backgroundColor = .blue
+        button.setTitle("FB", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
+
+//        button.setImage(UIImage(named: "facebook")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        button.backgroundColor = .blue
         
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleFacebookButton), for: .touchUpInside)
@@ -68,8 +80,11 @@ class AboutAsViewController: UIViewController {
     
     let instagramButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "instagram")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        button.backgroundColor = .yellow
+        button.setTitle("INS", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
+//        button.setImage(UIImage(named: "instagram")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        button.backgroundColor = .yellow
         
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(hanldeInstagramButton), for: .touchUpInside)
@@ -84,9 +99,12 @@ class AboutAsViewController: UIViewController {
     let mailButton: UIButton = {
         let button = UIButton(type: .system)
         
-        button.setImage(UIImage(systemName: "mail", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.white,renderingMode: .alwaysOriginal), for: .normal)
+        button.setTitle("MAIL", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
         
-        button.backgroundColor = .green
+//        button.setImage(UIImage(systemName: "mail", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.black,renderingMode: .alwaysOriginal), for: .normal)
+//        button.backgroundColor = .greene
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleMailButton), for: .touchUpInside)
         return button
@@ -97,8 +115,13 @@ class AboutAsViewController: UIViewController {
     
     let wwwButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "www")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        button.backgroundColor = .red
+        button.setTitle("WWW", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.setTitleColor(.black, for: .normal)
+        
+        
+//        button.setImage(UIImage(named: "www")?.withRenderingMode(.alwaysOriginal), for: .normal)
+//        button.backgroundColor = .red
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleWwwButton), for: .touchUpInside)
         return button
@@ -114,9 +137,6 @@ class AboutAsViewController: UIViewController {
         
         view.backgroundColor = .white
         title = "O Nas"
-        //
-        //        setUpDescView()
-        //        setUpImageView()
         
         setUpContainerView()
         
@@ -125,7 +145,7 @@ class AboutAsViewController: UIViewController {
     func setUpContainerView() {
         let topContainerView = UIView()
         view.addSubview(topContainerView)
-        topContainerView.backgroundColor = .green
+//        topContainerView.backgroundColor = .green
         
         topContainerView.translatesAutoresizingMaskIntoConstraints = false
         topContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -141,7 +161,7 @@ class AboutAsViewController: UIViewController {
         
         let centerContainerView = UIView()
         view.addSubview(centerContainerView)
-        centerContainerView.backgroundColor = .red
+//        centerContainerView.backgroundColor = .red
         
         centerContainerView.translatesAutoresizingMaskIntoConstraints = false
         centerContainerView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor).isActive = true
@@ -157,7 +177,7 @@ class AboutAsViewController: UIViewController {
         
         let bottomContainerView = UIView()
         view.addSubview(bottomContainerView)
-        bottomContainerView.backgroundColor = .yellow
+//        bottomContainerView.backgroundColor = .yellow
         bottomContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -167,6 +187,7 @@ class AboutAsViewController: UIViewController {
         
         bottomContainerView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
         imageView.topAnchor.constraint(equalTo: bottomContainerView.topAnchor, constant: 10).isActive = true
         imageView.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 10).isActive = true
         imageView.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -10).isActive = true

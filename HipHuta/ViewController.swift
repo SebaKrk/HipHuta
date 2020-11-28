@@ -10,10 +10,6 @@ import MapKit
 
 class ViewController: UIViewController {
     
-    
-    
-    var mapView: MKMapView!
-    
     var logoImageView : UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "HipHutaLogo"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -130,6 +126,7 @@ class ViewController: UIViewController {
         
         topImageConteinerView.addSubview(logoImageView)
         
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.centerXAnchor.constraint(equalTo: topImageConteinerView.centerXAnchor).isActive = true
         logoImageView.centerYAnchor.constraint(equalTo: topImageConteinerView.centerYAnchor).isActive = true
         logoImageView.heightAnchor.constraint(equalTo: topImageConteinerView.heightAnchor, multiplier: 0.85).isActive = true
