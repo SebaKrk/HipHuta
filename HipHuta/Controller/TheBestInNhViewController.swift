@@ -10,7 +10,7 @@ import UIKit
 class TheBestInNhViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private let reuseIdentifier = "Cell"    
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +19,11 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         
         collectionView.backgroundColor = .white
         title = "The best in Nowa Huta"
-//        collectionView.isPagingEnabled = true
-
+        //        collectionView.isPagingEnabled = true
+        
     }
     
-//    MARK: - CELL
+    //    MARK: - CELL
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,16 +34,20 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TheBestInNhCell
         
         cell.backgroundColor = .red
-
+        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 8, bottom: 8, right: 8)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 300, height: 100)
-        let widht = (view.frame.width - 36)
-        return CGSize(width: widht, height: 300)
         
+        let widht = (view.frame.width - 30)
+        return CGSize(width: widht, height: 300)
+        //        return CGSize(width: 300, height: 100)
         
     }
 }
-   
+
