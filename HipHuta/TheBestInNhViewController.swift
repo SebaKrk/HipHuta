@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TheBestInNnViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class TheBestInNhViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     override func viewDidLoad() {
         super.viewDidLoad()
         

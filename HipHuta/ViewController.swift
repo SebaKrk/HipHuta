@@ -62,7 +62,12 @@ class ViewController: UIViewController {
     }()
     @objc func handleSecondButton() {
         print("button 2 pressed")
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
         
+        let rootVC = TheBestInNhViewController(collectionViewLayout: layout)
+        let navVC = UINavigationController(rootViewController: rootVC)
+        present(navVC, animated: true)
     }
     let thirdButton: UIButton = {
         let button = UIButton(type: .system)
