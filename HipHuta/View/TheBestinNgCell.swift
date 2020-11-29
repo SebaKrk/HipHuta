@@ -12,15 +12,15 @@ class TheBestInNhCell: UICollectionViewCell {
 //    MARK: - Properties
     
     lazy var containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .blue
+        let containerView = UIView()
+        containerView.backgroundColor = .blue
         
-        view.addSubview(nameLabel)
+        containerView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        nameLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         
-        return view
+        return containerView
     }()
     
     let nameLabel: UILabel = { // nazwa restauracji
@@ -35,6 +35,8 @@ class TheBestInNhCell: UICollectionViewCell {
     
     let imageView: UIImageView = { // zdjecie oceny restauracji
         let iv = UIImageView()
+        iv.backgroundColor = .yellow
+        iv.contentMode = .scaleAspectFit
         
         return iv
     }()
@@ -60,6 +62,7 @@ class TheBestInNhCell: UICollectionViewCell {
 //    MARK: - SetUp View
     
     func configureViewComponents() {
+
         
     }
     
