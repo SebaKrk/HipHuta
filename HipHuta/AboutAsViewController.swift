@@ -16,7 +16,7 @@ class AboutAsViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
     
     let logoTextView: UITextView = {
         let textView = UITextView()
@@ -63,9 +63,9 @@ class AboutAsViewController: UIViewController {
         button.setTitle("FB", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.black, for: .normal)
-
-//        button.setImage(UIImage(named: "facebook")?.withRenderingMode(.alwaysOriginal), for: .normal)
-//        button.backgroundColor = .blue
+        
+        //        button.setImage(UIImage(named: "facebook")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        //        button.backgroundColor = .blue
         
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleFacebookButton), for: .touchUpInside)
@@ -83,8 +83,8 @@ class AboutAsViewController: UIViewController {
         button.setTitle("INS", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.black, for: .normal)
-//        button.setImage(UIImage(named: "instagram")?.withRenderingMode(.alwaysOriginal), for: .normal)
-//        button.backgroundColor = .yellow
+        //        button.setImage(UIImage(named: "instagram")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        //        button.backgroundColor = .yellow
         
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(hanldeInstagramButton), for: .touchUpInside)
@@ -103,8 +103,8 @@ class AboutAsViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(.black, for: .normal)
         
-//        button.setImage(UIImage(systemName: "mail", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.black,renderingMode: .alwaysOriginal), for: .normal)
-//        button.backgroundColor = .greene
+        //        button.setImage(UIImage(systemName: "mail", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))?.withTintColor(.black,renderingMode: .alwaysOriginal), for: .normal)
+        //        button.backgroundColor = .greene
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleMailButton), for: .touchUpInside)
         return button
@@ -120,8 +120,8 @@ class AboutAsViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         
         
-//        button.setImage(UIImage(named: "www")?.withRenderingMode(.alwaysOriginal), for: .normal)
-//        button.backgroundColor = .red
+        //        button.setImage(UIImage(named: "www")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        //        button.backgroundColor = .red
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(handleWwwButton), for: .touchUpInside)
         return button
@@ -145,23 +145,30 @@ class AboutAsViewController: UIViewController {
     func setUpContainerView() {
         let topContainerView = UIView()
         view.addSubview(topContainerView)
-//        topContainerView.backgroundColor = .green
+        topContainerView.backgroundColor = .green
         
         topContainerView.translatesAutoresizingMaskIntoConstraints = false
         topContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         topContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         topContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         topContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
-        
+     
         topContainerView.addSubview(logoTextView)
         logoTextView.topAnchor.constraint(equalTo: topContainerView.topAnchor).isActive = true
         logoTextView.leadingAnchor.constraint(equalTo: topContainerView.leadingAnchor).isActive = true
         logoTextView.trailingAnchor.constraint(equalTo: topContainerView.trailingAnchor).isActive = true
         logoTextView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor, constant: 0).isActive = true
         
+//        topContainerView.addSubview(logoImageView)
+//        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+//        logoImageView.topAnchor.constraint(equalTo: topContainerView.topAnchor, constant: 10).isActive = true
+//        logoImageView.leadingAnchor.constraint(equalTo: topContainerView.leadingAnchor).isActive = true
+//        logoImageView.trailingAnchor.constraint(equalTo: topContainerView.trailingAnchor).isActive = true
+//        logoImageView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor, constant: 0.3).isActive = true
+        
         let centerContainerView = UIView()
         view.addSubview(centerContainerView)
-//        centerContainerView.backgroundColor = .red
+        //        centerContainerView.backgroundColor = .red
         
         centerContainerView.translatesAutoresizingMaskIntoConstraints = false
         centerContainerView.bottomAnchor.constraint(equalTo: topContainerView.bottomAnchor).isActive = true
@@ -177,7 +184,7 @@ class AboutAsViewController: UIViewController {
         
         let bottomContainerView = UIView()
         view.addSubview(bottomContainerView)
-//        bottomContainerView.backgroundColor = .yellow
+        //        bottomContainerView.backgroundColor = .yellow
         bottomContainerView.translatesAutoresizingMaskIntoConstraints = false
         
         bottomContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -192,7 +199,7 @@ class AboutAsViewController: UIViewController {
         imageView.leadingAnchor.constraint(equalTo: bottomContainerView.leadingAnchor, constant: 10).isActive = true
         imageView.trailingAnchor.constraint(equalTo: bottomContainerView.trailingAnchor, constant: -10).isActive = true
         imageView.bottomAnchor.constraint(equalTo: bottomContainerView.bottomAnchor, constant: -70).isActive = true
-    
+        
         let bottomControls = UIStackView(arrangedSubviews: [facebookButton,instagramButton,mailButton,wwwButton])
         view.addSubview(bottomControls)
         bottomControls.translatesAutoresizingMaskIntoConstraints = false
