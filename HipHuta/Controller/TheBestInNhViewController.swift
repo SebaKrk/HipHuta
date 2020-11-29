@@ -19,7 +19,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         
         collectionView.backgroundColor = .white
         title = "The best in Nowa Huta"
-        collectionView.isPagingEnabled = true
+//        collectionView.isPagingEnabled = true
 
     }
     
@@ -39,7 +39,11 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 100)
+//        return CGSize(width: 300, height: 100)
+        let widht = (view.frame.width - 36)
+        return CGSize(width: widht, height: 300)
+        
+        
     }
 }
    
