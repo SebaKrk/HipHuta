@@ -9,6 +9,8 @@ import UIKit
 
 class TheBestInNhCell: UICollectionViewCell {
     
+//    MARK: - Properties
+    
     lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .blue
@@ -43,9 +45,22 @@ class TheBestInNhCell: UICollectionViewCell {
         return iv
     }()
     
+//    MARK: - INIT
   
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        configureViewComponents()
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
+//    MARK: - SetUp View
     
+    func configureViewComponents() {
+        
+    }
     
 }
