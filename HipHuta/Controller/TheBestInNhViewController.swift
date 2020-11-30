@@ -9,7 +9,9 @@ import UIKit
 
 class TheBestInNhViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private let reuseIdentifier = "Cell"    
+    private let reuseIdentifier = "Cell"
+    
+    let restaurant = getRestaurant()
     
     
     override func viewDidLoad() {
@@ -27,13 +29,19 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return restaurant.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TheBestInNhCell
         
         cell.backgroundColor = .red
+        
+        let resView = restaurant[indexPath.item]
+        cell.imageView = resView.img
+        cell.nameLabel.text = resView.name
+        
+//        cell.imageView = restaurant.
         
         return cell
     }
