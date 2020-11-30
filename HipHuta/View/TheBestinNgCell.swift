@@ -45,10 +45,10 @@ class TheBestInNhCell: UICollectionViewCell {
     }()
 
     
-    let nameLabel: UILabel = { // nazwa restauracji
+    let nameLabel: UILabel = { // nazwa restauracji - Cafe Nowa Księgarnia
         let label = UILabel()
         
-        label.text = "Cafe Nowa Księgarnia"
+        label.text = "Nazwa"
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 16)
         
