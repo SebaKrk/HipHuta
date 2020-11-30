@@ -16,7 +16,18 @@ class TheBestInNhCell: UICollectionViewCell {
         iv.backgroundColor = .gray
 //        iv.contentMode = .scaleAspectFit
         iv.addSubview(nameLabel)
-    
+      
+        
+//        view.addSubview(nameLabel)
+//        nameLabel.center(inView: view)
+        
+//        iv.addSubview(secImageView)
+//        
+//        secImageView.translatesAutoresizingMaskIntoConstraints = false
+//        secImageView.centerXAnchor.constraint(equalTo: iv.centerXAnchor).isActive = true
+//        secImageView.centerYAnchor.constraint(equalTo: iv.centerYAnchor).isActive = true
+        
+//        secImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 50, height: 50)
         return iv
     }()
     

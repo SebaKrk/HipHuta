@@ -15,6 +15,7 @@
 		93015DB3256D5966005B4A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93015DB1256D5966005B4A3D /* LaunchScreen.storyboard */; };
 		932316E52570E3F300AD221B /* MapNhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932316E42570E3F300AD221B /* MapNhViewController.swift */; };
 		936EEE2C2573E55100F63067 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936EEE2B2573E55100F63067 /* Extensions.swift */; };
+		936EEE36257526DD00F63067 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936EEE35257526DD00F63067 /* RestaurantModel.swift */; };
 		936FB7FF256FB3D10099520D /* AboutAsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FB7FE256FB3D10099520D /* AboutAsViewController.swift */; };
 		93BA57C225737DA1002DFCEB /* TheBestInNhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA57C125737DA1002DFCEB /* TheBestInNhViewController.swift */; };
 		93BA57C925738865002DFCEB /* TheBestinNgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BA57C825738865002DFCEB /* TheBestinNgCell.swift */; };
@@ -31,6 +32,7 @@
 		93015DB4256D5966005B4A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		932316E42570E3F300AD221B /* MapNhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNhViewController.swift; sourceTree = "<group>"; };
 		936EEE2B2573E55100F63067 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		936EEE35257526DD00F63067 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		936FB7FE256FB3D10099520D /* AboutAsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsViewController.swift; sourceTree = "<group>"; };
 		93BA57C125737DA1002DFCEB /* TheBestInNhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBestInNhViewController.swift; sourceTree = "<group>"; };
 		93BA57C825738865002DFCEB /* TheBestinNgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBestinNgCell.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		93BA57CD25738905002DFCEB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				936EEE35257526DD00F63067 /* RestaurantModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93BA57C225737DA1002DFCEB /* TheBestInNhViewController.swift in Sources */,
+				936EEE36257526DD00F63067 /* RestaurantModel.swift in Sources */,
 				936FB7FF256FB3D10099520D /* AboutAsViewController.swift in Sources */,
 				93BA57C925738865002DFCEB /* TheBestinNgCell.swift in Sources */,
 				936EEE2C2573E55100F63067 /* Extensions.swift in Sources */,
