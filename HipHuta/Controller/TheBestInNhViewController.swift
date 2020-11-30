@@ -45,7 +45,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let widht = (view.frame.width - 30)
-        return CGSize(width: widht, height: 300)
+        return CGSize(width: widht, height: 375)
         //        return CGSize(width: 300, height: 100)
         
     }

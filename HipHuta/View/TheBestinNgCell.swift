@@ -8,51 +8,53 @@
 import UIKit
 
 class TheBestInNhCell: UICollectionViewCell {
+
+    //    MARK: - Properties
     
-//    MARK: - Properties
+    lazy var imageView: UIImageView = {
+        let iv = UIImageView(image: #imageLiteral(resourceName: "CafeNowaKsięgarnia"))
+        iv.backgroundColor = .gray
+//        iv.contentMode = .scaleAspectFit
+        iv.addSubview(nameLabel)
     
-    lazy var containerView: UIView = {
-        let containerView = UIView()
-        containerView.backgroundColor = .blue
-        
-        containerView.addSubview(nameLabel)
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
-        nameLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
-        
-        return containerView
+        return iv
     }()
+    
+    lazy var nameContainerView :UIView = {
+        let view = UIView()
+        
+        view.backgroundColor = .black
+        view.addSubview(nameLabel)
+        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        return view
+    }()
+
     
     let nameLabel: UILabel = { // nazwa restauracji
         let label = UILabel()
         
-        label.text = "Restauracja 1"
-        label.textColor = .black
+        label.text = "Cafe Nowa Księgarnia"
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 16)
         
         return label
     }()
-    
-    let imageView: UIImageView = { // zdjecie oceny restauracji
-        let iv = UIImageView()
-        iv.backgroundColor = .yellow
-        iv.contentMode = .scaleAspectFit
-        
-        return iv
-    }()
-    
+
     let secImageView: UIImageView = { // zdjecie restauracji
         let iv = UIImageView()
+        iv.backgroundColor = .yellow
         
         return iv
     }()
     
-//    MARK: - INIT
-  
+    //    MARK: - INIT
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.layer.cornerRadius = 10
         
         configureViewComponents()
     }
@@ -61,11 +63,27 @@ class TheBestInNhCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    MARK: - SetUp View
+    //    MARK: - SetUp View
     
     func configureViewComponents() {
-
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
+        
+        
+        addSubview(imageView)
+        imageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: self.frame.height - 50)
+        
+         addSubview(nameContainerView)
+        nameContainerView.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        
         
     }
     
 }
+
+
+//
+//imageView.translatesAutoresizingMaskIntoConstraints = false
+//imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//imageView.leftAnchor.constraint(equalTo: leadingAnchor).isActive = true
+//imageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
