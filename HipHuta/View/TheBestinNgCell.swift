@@ -65,8 +65,10 @@ class TheBestInNhCell: UICollectionViewCell {
     }
     //    MARK: - Selector
     
-    @objc func handleLongPress() {
-        print("long press activate")
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            print ("began")
+        }
     }
     
     
