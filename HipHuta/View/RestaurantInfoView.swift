@@ -64,7 +64,20 @@ class RestaurantInfoView: UIView {
          return label
      }()
     
-  
+    let moreInfoButton : UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .systemPink
+        button.setTitle("More Info", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.addTarget(self, action: #selector(handleMoreInfoButton), for: .touchUpInside)
+        button.layer.cornerRadius = 5
+        
+        return button
+    }()
+    @objc func handleMoreInfoButton() {
+        print("moreInfoButton press")
+    }
     
     // MARK: - Init
 
