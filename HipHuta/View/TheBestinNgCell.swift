@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol TheBestInNhCellDelegate {
+    func presentInfoView()
+}
+
+
 class TheBestInNhCell: UICollectionViewCell {
     
     //    MARK: - Properties
+    
+    
     
     lazy var imageView: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "CafeNowaKsięgarnia"))
@@ -35,7 +42,7 @@ class TheBestInNhCell: UICollectionViewCell {
     }()
     
     
-    let nameLabel: UILabel = { // nazwa restauracji - Cafe Nowa Księgarnia
+    let nameLabel: UILabel = {
         let label = UILabel()
         
         label.text = "Nazwa"
@@ -45,7 +52,7 @@ class TheBestInNhCell: UICollectionViewCell {
         return label
     }()
     
-    let secImageView: UIImageView = { // zdjecie restauracji
+    let secImageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .yellow
         
@@ -63,7 +70,7 @@ class TheBestInNhCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //    MARK: - Selector
+    //    MARK: - Selector / LONG PRESS /
     
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {

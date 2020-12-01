@@ -80,3 +80,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     }
 }
 
+extension TheBestInNhCell {
+    
+}
+

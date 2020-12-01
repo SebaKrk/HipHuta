@@ -10,6 +10,8 @@ import UIKit
 
 class RestaurantInfoView: UIView {
     
+//    MARK: - UI Image/Button/View
+    
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .blue
@@ -119,8 +121,3 @@ class RestaurantInfoView: UIView {
     }
     
 }
-
-//var name = ""
-//var adress = ""
-//var description = ""
-//var moreInfo = ""
