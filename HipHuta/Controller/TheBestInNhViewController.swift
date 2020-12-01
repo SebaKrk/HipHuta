@@ -13,6 +13,13 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     
     let restaurant = getRestaurant()
     
+    let infoView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        view.layer.cornerRadius = 5
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +29,16 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         collectionView.backgroundColor = .white
         title = "The best in Nowa Huta"
         //        collectionView.isPagingEnabled = true
+        setUpViewComponents()
         
+    }
+    
+//    MARK: - VIEW Components
+    
+    func setUpViewComponents() {
+        
+        view.addSubview(infoView)
+        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 64, height: 500)
     }
     
     //    MARK: - CELL
