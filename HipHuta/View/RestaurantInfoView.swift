@@ -32,23 +32,26 @@ class RestaurantInfoView: UIView {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.text = "Restauracja"
         return label
     }()
     
     let descriptionLabel : UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .yellow
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 10)
-        label.text = "OPIS"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.text = "Dobra książka i pyszna kawa. Czy może być lepsze połączenie? Z tego jakże trafnego założenia wyszli założyciele Nowej na os. Zgody 7, którzy postanowili udowodnić, że w Hucie wciąż jest miejsce na księgarnię z prawdziwego zdarzenia, kolejną świetną kawiarnię i piękny neon"
+        label.numberOfLines = 0
         return label
     }()
     
     let adressLabel : UILabel = {
        let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.text = "os. Centrum C1, 31-929 Kraków"
         return label
     }()
@@ -56,10 +59,12 @@ class RestaurantInfoView: UIView {
     let moreInfoLabel : UILabel = {
         let label = UILabel()
          label.textColor = .black
-         label.font = UIFont.boldSystemFont(ofSize: 10)
+         label.font = UIFont.boldSystemFont(ofSize: 15)
          label.text = "https://hiphuta.com/..."
          return label
      }()
+    
+  
     
     // MARK: - Init
 
@@ -81,13 +86,25 @@ class RestaurantInfoView: UIView {
         nameContainerView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
         addSubview(imageView)
-        imageView.anchor(top: nameContainerView.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 24, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
+        imageView.anchor(top: nameContainerView.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 24, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 250, height: 100)
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
+        addSubview(descriptionLabel)
+        descriptionLabel.anchor(top: imageView.bottomAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 250, height: 300)
+        descriptionLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+
+        addSubview(adressLabel)
+        adressLabel.anchor(top: descriptionLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
+        adressLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        
+        addSubview(moreInfoLabel)
+        moreInfoLabel.anchor(top: adressLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
+        moreInfoLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
     }
     
 }
 
-
+//var name = ""
+//var adress = ""
+//var description = ""
+//var moreInfo = ""
