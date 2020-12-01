@@ -21,7 +21,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     }()
     
     let visualEffectView: UIVisualEffectView = {
-        let blueEffect = UIBlurEffect(style: .dark)
+        let blueEffect = UIBlurEffect(style: .light)
         let view = UIVisualEffectView(effect: blueEffect)
         
         return view
@@ -43,6 +43,13 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     //    MARK: - VIEW Components
     
     func setUpViewComponents() {
+        view.addSubview(visualEffectView)
+        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        visualEffectView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        visualEffectView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        visualEffectView.alpha = 0
     
     }
     
@@ -94,6 +101,7 @@ extension TheBestInNhViewController: TheBestInNhCellDelegate  {
         infoView.alpha = 0
         
         UIView.animate(withDuration: 0.5) {
+            self.visualEffectView.alpha = 1
             self.infoView.alpha = 1
             self.infoView.transform = .identity
         }
