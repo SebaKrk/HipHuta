@@ -110,9 +110,12 @@ class RestaurantInfoView: UIView {
         adressLabel.anchor(top: descriptionLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
         adressLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        addSubview(moreInfoLabel)
-        moreInfoLabel.anchor(top: adressLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
-        moreInfoLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+//        addSubview(moreInfoLabel)
+//        moreInfoLabel.anchor(top: adressLabel.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 16, paddingLeft: 0, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
+//        moreInfoLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+        addSubview(moreInfoButton)
+        moreInfoButton.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 12, paddingBottom: 12, paddingRight: 12, width: 0, height: 50)
     }
     
 }
