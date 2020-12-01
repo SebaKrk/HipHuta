@@ -20,6 +20,13 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         return view
     }()
     
+    let visualEffectView: UIVisualEffectView = {
+        let blueEffect = UIBlurEffect(style: .dark)
+        let view = UIVisualEffectView(effect: blueEffect)
+        
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
