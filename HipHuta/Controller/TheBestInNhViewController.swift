@@ -33,12 +33,15 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         
     }
     
-//    MARK: - VIEW Components
+    //    MARK: - VIEW Components
     
     func setUpViewComponents() {
         
         view.addSubview(infoView)
-        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 64, height: 500)
+        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 80, height: 600)
+        infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
+        
     }
     
     //    MARK: - CELL
@@ -54,10 +57,10 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
             cell.backgroundColor = .red
             
             let resView = restaurant[indexPath.item]
-
+            
             cell.imageView.image = UIImage(named: resView.imgName)
             cell.nameLabel.text = resView.name
-
+            
             return cell
         }
         return UICollectionViewCell()
