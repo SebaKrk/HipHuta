@@ -16,7 +16,7 @@ class TheBestInNhCell: UICollectionViewCell {
     
     //    MARK: - Properties
     
-    
+    var delegate: TheBestInNhCellDelegate?
     
     lazy var imageView: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "CafeNowaKsięgarnia"))
@@ -74,6 +74,7 @@ class TheBestInNhCell: UICollectionViewCell {
     
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
+            delegate?.presentInfoView()
             print ("began")
         }
     }

@@ -36,12 +36,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     //    MARK: - VIEW Components
     
     func setUpViewComponents() {
-        
-        view.addSubview(infoView)
-        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 80, height: 600)
-        infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
-        
+    
     }
     
     //    MARK: - CELL
@@ -60,6 +55,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
             
             cell.imageView.image = UIImage(named: resView.imgName)
             cell.nameLabel.text = resView.name
+            cell.delegate = self
             
             return cell
         }
@@ -80,7 +76,14 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     }
 }
 
-extension TheBestInNhCell {
+extension TheBestInNhViewController: TheBestInNhCellDelegate  {
+    func presentInfoView() {
+        view.addSubview(infoView)
+        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 80, height: 600)
+        infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
+    }
+    
     
 }
 
