@@ -82,6 +82,14 @@ extension TheBestInNhViewController: TheBestInNhCellDelegate  {
         infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 80, height: 600)
         infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
+        
+        infoView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        infoView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5) {
+            self.infoView.alpha = 1
+            self.infoView.transform = .identity
+        }
     }
     
     
