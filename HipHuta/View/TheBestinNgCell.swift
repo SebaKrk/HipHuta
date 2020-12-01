@@ -8,16 +8,16 @@
 import UIKit
 
 class TheBestInNhCell: UICollectionViewCell {
-
+    
     //    MARK: - Properties
     
     lazy var imageView: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "CafeNowaKsięgarnia"))
         iv.adjustsImageSizeForAccessibilityContentSizeCategory = false
         iv.backgroundColor = .gray
-//        iv.contentMode = .scaleAspectFit
+        //        iv.contentMode = .scaleAspectFit
         iv.addSubview(nameLabel)
-      
+        
         return iv
     }()
     
@@ -33,7 +33,7 @@ class TheBestInNhCell: UICollectionViewCell {
         
         return view
     }()
-
+    
     
     let nameLabel: UILabel = { // nazwa restauracji - Cafe Nowa Księgarnia
         let label = UILabel()
@@ -44,7 +44,7 @@ class TheBestInNhCell: UICollectionViewCell {
         
         return label
     }()
-
+    
     let secImageView: UIImageView = { // zdjecie restauracji
         let iv = UIImageView()
         iv.backgroundColor = .yellow
@@ -63,6 +63,12 @@ class TheBestInNhCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    //    MARK: - Selector
+    
+    @objc func handleLongPress() {
+        print("long press activate")
+    }
+    
     
     //    MARK: - SetUp View
     
@@ -74,9 +80,11 @@ class TheBestInNhCell: UICollectionViewCell {
         addSubview(imageView)
         imageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: self.frame.height - 50)
         
-         addSubview(nameContainerView)
+        addSubview(nameContainerView)
         nameContainerView.anchor(top: nil, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
+        let longPressGestRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        self.addGestureRecognizer(longPressGestRecognizer)
         
     }
     
