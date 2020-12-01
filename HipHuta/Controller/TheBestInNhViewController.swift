@@ -33,17 +33,19 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TheBestInNhCell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? TheBestInNhCell {
+            
+            cell.backgroundColor = .red
+            
+            let resView = restaurant[indexPath.item]
+
+            cell.imageView.image = UIImage(named: resView.imgName)
+            cell.nameLabel.text = resView.name
+
+            return cell
+        }
+        return UICollectionViewCell()
         
-        cell.backgroundColor = .red
-        
-        let resView = restaurant[indexPath.item]
-        cell.imageView = resView.img
-        cell.nameLabel.text = resView.name
-        
-//        cell.imageView = restaurant.
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
