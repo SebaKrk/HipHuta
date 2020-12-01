@@ -13,8 +13,8 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     
     let restaurant = getRestaurant()
     
-    let infoView: UIView = {
-        let view = UIView()
+    let infoView: RestaurantInfoView = {
+        let view = RestaurantInfoView()
         view.backgroundColor = .red
         view.layer.cornerRadius = 5
         return view
