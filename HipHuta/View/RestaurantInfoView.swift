@@ -21,7 +21,11 @@ class RestaurantInfoView: UIView {
         view.backgroundColor = .white
         view.addSubview(nameLabel)
         view.layer.cornerRadius = 5
-        nameLabel.center(inView: view)
+//        nameLabel.center(inView: view)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
         return view
     }()
     let nameLabel: UILabel = {
@@ -40,6 +44,20 @@ class RestaurantInfoView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+//    MARK: - View Components
+    func configureViewComponents() {
+        
+        
+        addSubview(nameContainerView)
+        nameContainerView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        
+        addSubview(imageView)
+        imageView.anchor(top: nameContainerView.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 24, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 100, height: 60)
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        
+        
     }
     
 }
