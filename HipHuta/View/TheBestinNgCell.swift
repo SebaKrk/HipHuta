@@ -14,9 +14,14 @@ protocol TheBestinNgCellDelagte {
 class TheBestInNhCell: UICollectionViewCell {
     
     //    MARK: - Properties
+    
     var delegate: TheBestinNgCellDelagte?
     
-    
+    var restaurant : RestaurantModel? {
+        didSet {
+            nameLabel.text = restaurant?.name
+        }
+    }
     
     
     lazy var imageView: UIImageView = {
@@ -76,6 +81,9 @@ class TheBestInNhCell: UICollectionViewCell {
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             print ("Long Press began")
+            guard let restaurant = self.restaurant else {return}
+            delegate?.presentInfoView(withRestaurant: restaurant)
+            
         }
     }
     
