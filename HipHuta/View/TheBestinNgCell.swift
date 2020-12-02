@@ -7,9 +7,17 @@
 
 import UIKit
 
+protocol TheBestinNgCellDelagte {
+    func presentInfoView(withRestaurant: RestaurantModel)
+}
+
 class TheBestInNhCell: UICollectionViewCell {
     
     //    MARK: - Properties
+    var delegate: TheBestinNgCellDelagte?
+    
+    
+    
     
     lazy var imageView: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "CafeNowaKsięgarnia"))
@@ -67,7 +75,7 @@ class TheBestInNhCell: UICollectionViewCell {
     
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
-            print ("began")
+            print ("Long Press began")
         }
     }
     
