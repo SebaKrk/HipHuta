@@ -37,11 +37,6 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     
     func setUpViewComponents() {
         
-        view.addSubview(infoView)
-        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 80, height: 600)
-        infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
-        
     }
     
     //    MARK: - CELL
@@ -80,3 +75,17 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     }
 }
 
+extension TheBestInNhViewController: TheBestinNgCellDelagte {
+    
+    func presentInfoView(withRestaurant: RestaurantModel) {
+        
+        view.addSubview(infoView)
+        infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 80, height: 600)
+        infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
+        
+        
+    }
+    
+    
+}
