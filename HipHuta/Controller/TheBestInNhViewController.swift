@@ -106,7 +106,5 @@ extension TheBestInNhViewController: TheBestInNhCellDelegate  {
             self.infoView.transform = .identity
         }
     }
-    
-    
 }
 

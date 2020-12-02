@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol RestaurantInfoViewDelegate { //14:57
+    func dismissInfoView()
+}
+
 
 class RestaurantInfoView: UIView {
+    
+    var delegate: RestaurantInfoViewDelegate?
     
 //    MARK: - UI Image/Button/View
     
@@ -79,6 +85,8 @@ class RestaurantInfoView: UIView {
     }()
     @objc func handleMoreInfoButton() {
         print("moreInfoButton press")
+        delegate?.dismissInfoView()
+         
     }
     
     // MARK: - Init
