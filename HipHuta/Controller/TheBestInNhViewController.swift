@@ -93,6 +93,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
 extension TheBestInNhViewController: TheBestInNhCellDelegate  {
     func presentInfoView() {
         view.addSubview(infoView)
+        infoView.delegate = self
         infoView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width - 80, height: 600)
         infoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         infoView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -20).isActive = true
@@ -105,6 +106,20 @@ extension TheBestInNhViewController: TheBestInNhCellDelegate  {
             self.infoView.alpha = 1
             self.infoView.transform = .identity
         }
+    }
+}
+
+extension TheBestInNhViewController: RestaurantInfoViewDelegate {
+    func dismissInfoView() {
+     
+        UIView.animate(withDuration: 0.5) {
+            self.visualEffectView.alpha = 0
+            self.infoView.alpha = 0
+            self.infoView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        } completion: { (_) in
+            self.infoView.removeFromSuperview()
+        }
+
     }
 }
 
