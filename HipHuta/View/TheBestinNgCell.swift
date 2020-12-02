@@ -81,7 +81,10 @@ class TheBestInNhCell: UICollectionViewCell {
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             print ("Long Press began")
-            guard let restaurant = self.restaurant else {return}
+            guard let restaurant = self.restaurant else {
+                print("error in handleLongPress")
+                return
+            }
             delegate?.presentInfoView(withRestaurant: restaurant)
             
         }

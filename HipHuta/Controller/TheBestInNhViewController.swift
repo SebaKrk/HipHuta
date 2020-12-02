@@ -56,6 +56,8 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
             cell.imageView.image = UIImage(named: resView.imgName)
             cell.nameLabel.text = resView.name
             
+            cell.delegate = self
+            
             return cell
         }
         return UICollectionViewCell()
