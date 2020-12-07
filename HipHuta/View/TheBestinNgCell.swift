@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TheBestinNgCellDelagte {
-    func presentInfoView(withRestaurant: RestaurantModel)
+    func presentInfoView(withRestaurant restaurant: RestaurantModel)
 }
 
 class TheBestInNhCell: UICollectionViewCell {
@@ -22,6 +22,7 @@ class TheBestInNhCell: UICollectionViewCell {
             nameLabel.text = restaurant?.name
         }
     }
+    
     
     
     lazy var imageView: UIImageView = {
@@ -48,7 +49,7 @@ class TheBestInNhCell: UICollectionViewCell {
     }()
     
     
-    let nameLabel: UILabel = { // nazwa restauracji - Cafe Nowa Księgarnia
+    let nameLabel: UILabel = {
         let label = UILabel()
         
         label.text = "Nazwa"
@@ -58,7 +59,7 @@ class TheBestInNhCell: UICollectionViewCell {
         return label
     }()
     
-    let secImageView: UIImageView = { // zdjecie restauracji
+    let secImageView: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .yellow
         
@@ -80,9 +81,18 @@ class TheBestInNhCell: UICollectionViewCell {
     
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
+            
+            
+            print(restaurant)
+            print ("\(restaurant?.name)")
+            
+            
+            
+            
+            
             print ("Long Press began")
             guard let restaurant = self.restaurant else {
-                print("error in handleLongPress")
+                print("error in handleLongPress ")
                 return
             }
             delegate?.presentInfoView(withRestaurant: restaurant)
@@ -110,10 +120,3 @@ class TheBestInNhCell: UICollectionViewCell {
     }
     
 }
-
-
-//
-//imageView.translatesAutoresizingMaskIntoConstraints = false
-//imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-//imageView.leftAnchor.constraint(equalTo: leadingAnchor).isActive = true
-//imageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true

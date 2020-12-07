@@ -9,12 +9,12 @@
 import UIKit
 
 struct RestaurantModel {
-    var name = ""
-    var adress = ""
+    var name :String?
+    var adress :String?
     var img = UIImageView()
-    var imgName = ""
-    var description = ""
-    var moreInfo = ""
+    var imgName :String?
+    var description :String?
+    var moreInfo :String?
 }
 
 

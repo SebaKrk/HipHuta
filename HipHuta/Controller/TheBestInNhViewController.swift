@@ -7,11 +7,13 @@
 
 import UIKit
 
+private let reuseIdentifier = "Cell"
+
 class TheBestInNhViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private let reuseIdentifier = "Cell"
     
-    let restaurant = getRestaurant()
+    
+    var restaurant = getRestaurant()
     
     let infoView: RestaurantInfoView = {
         let view = RestaurantInfoView()
@@ -53,7 +55,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
             
             let resView = restaurant[indexPath.item]
             
-            cell.imageView.image = UIImage(named: resView.imgName)
+            cell.imageView.image = UIImage(named: resView.imgName!)
             cell.nameLabel.text = resView.name
             
             cell.delegate = self
