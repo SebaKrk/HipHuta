@@ -7,6 +7,8 @@
 
 import UIKit
 import SafariServices
+import MessageUI
+
 
 class AboutAsViewController: UIViewController {
     
@@ -212,9 +214,28 @@ class AboutAsViewController: UIViewController {
             bottomControls.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             bottomControls.heightAnchor.constraint(equalToConstant: 30)
         ])
-        
-        
     }
 }
 
+extension AboutAsViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let _ = error {
+            controller.dismiss(animated: true, completion: nil)
+            return
+        }
+        switch result {
+        case .cancelled:
+            break
+        case .failed:
+            break
+        case .saved:
+            break
+        case .sent:
+            break
+        @unknown default:
+            fatalError()
+        }
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
 
