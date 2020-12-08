@@ -112,7 +112,15 @@ class AboutAsViewController: UIViewController {
         return button
     }()
     @objc func handleMailButton() {
-        print("send mail opction")
+        guard MFMailComposeViewController.canSendMail() else {
+            return
+        }
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients(["s.sciuba@icloud.com"])
+        composer.setSubject("HipHuta - pytanie")
+        composer.setMessageBody("Czesc Seba, chcialbym sie dowiedziec...", isHTML: false)
+        present(composer, animated: true, completion: nil)
     }
     
     let wwwButton: UIButton = {
