@@ -91,7 +91,12 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let restaurantVC = AboutRestaurantVC()
-    
+        
+        restaurantVC.nameLabel.text = restaurant[indexPath.item].name
+        restaurantVC.resImage.image = restaurant[indexPath.item].img
+        restaurantVC.destriptionLabel.text = restaurant[indexPath.item].description
+        restaurantVC.adressLabel.text = restaurant[indexPath.item].adress
+//        restaurantVC.modalPresentationStyle = .fullScreen
         present(restaurantVC, animated: true, completion: nil)
         
     }
