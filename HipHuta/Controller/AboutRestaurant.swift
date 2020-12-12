@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AboutRestaurantVC: UIViewController {
     
@@ -74,6 +75,7 @@ class AboutRestaurantVC: UIViewController {
         button.backgroundColor = .black
         button.layer.cornerRadius = 10
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(handleMoreInfoButton), for: .touchUpInside)
         
         return button
     }()
@@ -84,6 +86,7 @@ class AboutRestaurantVC: UIViewController {
         
         return view
     }()
+    
     //    MARK: - ViewDidLoad
     
     override func viewDidLoad() {
@@ -93,6 +96,14 @@ class AboutRestaurantVC: UIViewController {
         title = "The Best in Noowa Huta"
         setupViewConstraint()
         
+    }
+//    MARK: OBJC func
+    
+    @objc func handleMoreInfoButton() {
+        print("action")
+        let url = "https://hiphuta.com/2019/12/19/cafe-nowa-ksiegarnia-na-kawe-i-po-trafiony-prezent/"
+        let vc  = SFSafariViewController(url: URL(string: url)!)
+        present(vc, animated: true, completion: nil)
     }
     
     //    MARK: - VIEW Constraint
