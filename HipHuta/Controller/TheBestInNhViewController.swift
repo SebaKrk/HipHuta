@@ -88,6 +88,13 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         //        return CGSize(width: 300, height: 100)
         
     }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let restaurantVC = AboutRestaurantVC()
+    
+        present(restaurantVC, animated: true, completion: nil)
+        
+    }
 }
 
 extension TheBestInNhViewController: TheBestInNhCellDelegate  {
