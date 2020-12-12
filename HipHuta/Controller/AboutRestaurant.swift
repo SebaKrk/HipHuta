@@ -10,6 +10,14 @@ import SafariServices
 
 class AboutRestaurantVC: UIViewController {
     
+    var urlString = ""
+    
+    var restaurant: RestaurantModel? {
+        didSet {
+            urlString = restaurant!.moreInfo
+        }
+    }
+    
     var containerView : UIView = {
         var container = UIView()
         container.backgroundColor = .white
@@ -101,7 +109,7 @@ class AboutRestaurantVC: UIViewController {
     
     @objc func handleMoreInfoButton() {
         print("action")
-        let url = "https://hiphuta.com/2019/12/19/cafe-nowa-ksiegarnia-na-kawe-i-po-trafiony-prezent/"
+        let url = urlString
         let vc  = SFSafariViewController(url: URL(string: url)!)
         present(vc, animated: true, completion: nil)
     }

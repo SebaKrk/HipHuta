@@ -96,6 +96,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         restaurantVC.resImage.image = restaurant[indexPath.item].img
         restaurantVC.destriptionLabel.text = restaurant[indexPath.item].description
         restaurantVC.adressLabel.text = restaurant[indexPath.item].adress
+        restaurantVC.urlString = restaurant[indexPath.item].moreInfo
 //        restaurantVC.modalPresentationStyle = .fullScreen
         present(restaurantVC, animated: true, completion: nil)
         
