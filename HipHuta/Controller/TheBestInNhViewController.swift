@@ -93,7 +93,7 @@ class TheBestInNhViewController: UICollectionViewController, UICollectionViewDel
         let restaurantVC = AboutRestaurantVC()
         
         restaurantVC.nameLabel.text = restaurant[indexPath.item].name
-        restaurantVC.resImage.image = restaurant[indexPath.item].img
+        restaurantVC.resImage.image = restaurant[indexPath.item].img2
         restaurantVC.destriptionLabel.text = restaurant[indexPath.item].description
         restaurantVC.adressLabel.text = restaurant[indexPath.item].adress
         restaurantVC.urlString = restaurant[indexPath.item].moreInfo
