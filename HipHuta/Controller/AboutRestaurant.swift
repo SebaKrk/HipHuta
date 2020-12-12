@@ -98,7 +98,53 @@ class AboutRestaurantVC: UIViewController {
     //    MARK: - VIEW Constraint
     
     func setupViewConstraint() {
-      
+        view.addSubview(visualEffectView)
+        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        visualEffectView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        visualEffectView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        visualEffectView.alpha = 1
+        
+        view.addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -30).isActive = true
+        
+        containerView.addSubview(nameLabelContainer)
+        
+        nameLabelContainer.translatesAutoresizingMaskIntoConstraints = false
+        nameLabelContainer.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        nameLabelContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        nameLabelContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        nameLabelContainer.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        containerView.addSubview(adressLabel)
+        adressLabel.translatesAutoresizingMaskIntoConstraints = false
+        adressLabel.topAnchor.constraint(equalTo: nameLabelContainer.bottomAnchor, constant: 20).isActive = true
+        adressLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        
+        containerView.addSubview(resImage)
+        resImage.translatesAutoresizingMaskIntoConstraints = false
+        resImage.topAnchor.constraint(equalTo: adressLabel.bottomAnchor,constant: 20).isActive = true
+        resImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,constant: 5).isActive = true
+        resImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,constant: -5).isActive = true
+        resImage.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        
+        containerView.addSubview(destriptionLabel)
+        destriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        destriptionLabel.topAnchor.constraint(equalTo: resImage.bottomAnchor, constant: 20).isActive = true
+        destriptionLabel.leadingAnchor.constraint(equalTo: resImage.leadingAnchor, constant: 10).isActive = true
+        destriptionLabel.trailingAnchor.constraint(equalTo: resImage.trailingAnchor, constant: -10).isActive = true
+        
+        containerView.addSubview(moreInfoButton)
+        moreInfoButton.translatesAutoresizingMaskIntoConstraints = false
+        moreInfoButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor , constant: -20).isActive = true
+        moreInfoButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor , constant: 40).isActive = true
+        moreInfoButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -40).isActive = true
+        moreInfoButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
 }
