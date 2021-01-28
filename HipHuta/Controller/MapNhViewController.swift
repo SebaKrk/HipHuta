@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapNhViewController : UIViewController {
+class MapNhViewController : UIViewController,MKMapViewDelegate {
     
 //    MARK: - Buttons, TextView, Maps
     
@@ -86,7 +86,12 @@ class MapNhViewController : UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+//    MARK: - REGION
+    let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50.0806375, longitude: 20.0470967), latitudinalMeters: 10000, longitudinalMeters: 10000)
+    let placCentralny = Place(title: "plac Centralny", coordinate:CLLocationCoordinate2D(latitude: 50.0720195, longitude: 20.0358773), info: "Plac Centralmny")
     // MARK: - SetUp Views & Buttons
+    
+    
     
     func setUpMapButton() {
         view.addSubview(centerMapButton)
@@ -151,6 +156,8 @@ class MapNhViewController : UIViewController {
         mapView.rightAnchor.constraint(equalTo: botoomContainerView.rightAnchor, constant: -10).isActive = true
         mapView.heightAnchor.constraint(equalTo: botoomContainerView.heightAnchor, multiplier: 0.9).isActive = true
         
+        mapView.setRegion(region, animated: true)
+        mapView.addAnnotation(placCentralny)
         
     }
 // MARK: - MAPS operation
