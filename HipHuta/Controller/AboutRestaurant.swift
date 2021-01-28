@@ -70,7 +70,7 @@ class AboutRestaurantVC: UIViewController {
         var label = UILabel()
         label.text = "dlugi tekst"
         label.textColor = .darkGray
-        label.numberOfLines = 0
+        label.numberOfLines = 8
         label.sizeToFit()
         
         return label
@@ -101,7 +101,7 @@ class AboutRestaurantVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "The Best in Noowa Huta"
+        title = "The Best in Nowa Huta"
         setupViewConstraint()
         
     }
@@ -157,6 +157,7 @@ class AboutRestaurantVC: UIViewController {
         destriptionLabel.topAnchor.constraint(equalTo: resImage.bottomAnchor, constant: 20).isActive = true
         destriptionLabel.leadingAnchor.constraint(equalTo: resImage.leadingAnchor, constant: 10).isActive = true
         destriptionLabel.trailingAnchor.constraint(equalTo: resImage.trailingAnchor, constant: -10).isActive = true
+        
         
         containerView.addSubview(moreInfoButton)
         moreInfoButton.translatesAutoresizingMaskIntoConstraints = false
